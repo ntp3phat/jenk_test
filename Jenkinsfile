@@ -20,6 +20,10 @@ pipeline {
     }
 
     stage('build image') {
+      environment {
+        user = 'test'
+        pass = 'test'
+      }
       steps {
         sh 'docker build -f curriculum-front/Dockerfile .'
       }
